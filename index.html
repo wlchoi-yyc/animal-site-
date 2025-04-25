@@ -1,24 +1,83 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
+<!DOCTYPE html><html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>可愛動物樂園</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffd1dc, #ffe4b5);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      color: #ff69b4;
+      padding: 20px;
+      font-size: 3rem;
+      text-shadow: 2px 2px #fff;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background-color: #fff8f0;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 200px;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+    .card p {
+      color: #555;
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+    .card button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #ffb6c1;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>歡迎來到可愛動物樂園！</h1>
-    <p>這裡住著好多毛茸茸的朋友，一起來認識牠們吧！</p>
-
-    <div class="gallery">
-      <img src="https://placekitten.com/200/200" alt="Kitten" />
-      <img src="https://placebear.com/200/200" alt="Bear" />
-      <img src="https://place-puppy.com/200x200" alt="Puppy" />
+  <h1>可愛動物樂園</h1>
+  <div class="gallery">
+    <div class="card">
+      <img src="https://placekitten.com/200/200" alt="小貓" onclick="document.getElementById('catSound').play()" />
+      <p>喵喵是最愛撒嬌的小貓咪！</p>
+      <button onclick="document.getElementById('catSound').play()">聽聲音</button>
     </div>
+    <div class="card">
+      <img src="https://place-puppy.com/200x200" alt="小狗" onclick="document.getElementById('dogSound').play()" />
+      <p>汪汪是最忠心的小夥伴！</p>
+      <button onclick="document.getElementById('dogSound').play()">聽聲音</button>
+    </div>
+    <div class="card">
+      <img src="https://placedog.net/200/200?id=1" alt="小狗狗" />
+      <p>開心玩耍的毛絨絨朋友！</p>
+    </div>
+    <div class="card">
+      <img src="https://placebear.com/200/200" alt="小熊" />
+      <p>胖嘟嘟的小熊最愛吃蜂蜜！</p>
+    </div>
+  </div><audio id="catSound" src="https://www.fesliyanstudios.com/play-mp3/6521"></audio> <audio id="dogSound" src="https://www.fesliyanstudios.com/play-mp3/6597"></audio>
 
-    <button onclick="alert('喵喵！你點到我了！')">點我一下</button>
-  </div>
 </body>
 </html>
